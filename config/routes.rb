@@ -1,6 +1,11 @@
 Rails.application.routes.draw do
   root 'pages#landing'
+  get '/login'=>'sessions#new'
+  post '/login' => 'sessions#create'
+  get '/logout' => 'sessions#destroy'
   
+  get '/signup' => 'users#new'
+  post '/users' => 'users#create'
   resources :questions, only: [:show, :new, :create]
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
