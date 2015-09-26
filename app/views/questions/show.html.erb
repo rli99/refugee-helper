@@ -1,5 +1,39 @@
 <main id="forum-container">
-    <section id="forum-show-container">
-        
+    <section id="forum-new-answer-container" class="col-xs-6 col-sm-6 col-md-6 col-lg-6 col-xs-offset-3 col-sm-offset-3 col-lg-offset-3 col-md-offset-3">
+
+
+            <div class="row">
+                Title: <%= @question.title %>
+            </div>
+            <div class="row">
+                Ticket ID: <%= @question.ticket_id %>
+            </div>
+            <div class="row">
+                Content
+                </br>
+                 <%= @question.content %>
+            </div>
+            </br>
+            </br>
+        <section id="forum-question-answer-container">
+            <% @answers.each do |answer| %>
+                <div class="forum-question-answer">
+                    By <%= answer.user.name %>
+                    </br>
+                    <%= answer.content %>
+                </div>
+            <% end %>
+        </section>
+
+        <%= form_for @answer, :url => answers_path do |f| %>
+            </br>
+            </br>
+            <%= label_tag(:content, "Answer") %>
+            <%= text_area_tag "answer[content]" %>
+            <%= hidden_field_tag "question_id", @question.id %>
+            </br>
+            </br>
+            <%= f.submit "Answer Question", class:"btn btn-primary pull-right" %>
+        <% end %>
     </section>
 </main>
