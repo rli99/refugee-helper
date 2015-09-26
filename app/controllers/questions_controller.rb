@@ -1,12 +1,16 @@
 class QuestionsController < ApplicationController
     @@Question_Counter = 0
     respond_to :html
+    def index
+        @questions = Question.paginate(:page => params[:page], :per_page => 5)
+    end
     def new
         @question = Question.new
     end
     def create
         @question = Question.new(question_param)
         @question.ticket_id = @@Question_Counter
+        @question.view = 0
         (@question.save) ?
             (   
                 @@Question_Counter+=1
@@ -19,6 +23,8 @@ class QuestionsController < ApplicationController
         @question = Question.find(params[:id]) 
         @question.view += 1
         @question.save
+        @answer = Answer.new
+        @answers = Answer.all
         
     end
     

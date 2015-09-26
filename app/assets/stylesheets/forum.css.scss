@@ -2,13 +2,12 @@
 #forum-container{
     height: 100%;
     width: 100%;
+    margin-top: 50px;
 }
 #forum-new-post-container{
-    margin-top: 50px;
     @include border-radius(10px);
     @include center-by-percentage(50%);
     height: 70%;
-    background-color: $form-background-color;
 
     >form{
         margin-top: 10px;
@@ -22,7 +21,6 @@
         resize: none;
     }
     input[type="text"]{
-        border: 0;
         width: 100%;
         height: 30px;
     }
@@ -45,3 +43,40 @@
     }
 }
 
+
+
+
+#forum-index-container{
+    height: 70%;
+    margin-top: 100px;
+
+
+
+}
+
+.forum-question-row{
+    td, th{
+        text-align: center;
+    }
+}
+
+#forum-new-answer-container{
+    height: 70%;
+    margin-top: 100px;
+    >div{
+        margin: 10px 0 10px 0;
+        font-weight: bold;
+        @include font-calculator(18/16);
+    }
+    textarea{
+        height: 30%;
+        width: 100%;
+        resize: none;
+    }
+}
+
+.forum-question-answer{
+    border-bottom: 1px black solid;
+    border-top: 1px black solid;
+    margin: 5px 0 5px 0;
+}
