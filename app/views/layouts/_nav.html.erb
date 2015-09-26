@@ -1,81 +1,39 @@
-
-  <div class="navbar navbar-default navbar-fixed-top">
-    <div class="container">
-      <div class="navbar-header">
-        <a href="../" class="navbar-brand">Bootswatch</a>
-        <button class="navbar-toggle" type="button" data-toggle="collapse" data-target="#navbar-main">
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-        </button>
-      </div>
-      <div class="navbar-collapse collapse" id="navbar-main">
-        <ul class="nav navbar-nav">
-          <li class="dropdown">
-            <a class="dropdown-toggle" data-toggle="dropdown" href="#" id="themes">Themes <span class="caret"></span></a>
-            <ul class="dropdown-menu" aria-labelledby="themes">
-              <li><a href="../default/">Default</a></li>
-              <li class="divider"></li>
-              <li><a href="../cerulean/">Cerulean</a></li>
-              <li><a href="../cosmo/">Cosmo</a></li>
-              <li><a href="../cyborg/">Cyborg</a></li>
-              <li><a href="../darkly/">Darkly</a></li>
-              <li><a href="../flatly/">Flatly</a></li>
-              <li><a href="../journal/">Journal</a></li>
-              <li><a href="../lumen/">Lumen</a></li>
-              <li><a href="../paper/">Paper</a></li>
-              <li><a href="../readable/">Readable</a></li>
-              <li><a href="../sandstone/">Sandstone</a></li>
-              <li><a href="../simplex/">Simplex</a></li>
-              <li><a href="../slate/">Slate</a></li>
-              <li><a href="../spacelab/">Spacelab</a></li>
-              <li><a href="../superhero/">Superhero</a></li>
-              <li><a href="../united/">United</a></li>
-              <li><a href="../yeti/">Yeti</a></li>
-            </ul>
-          </li>
-          <li>
-            <a href="../help/">Help</a>
-          </li>
-          <li>
-            <a href="http://news.bootswatch.com">Blog</a>
-          </li>
-          <li class="dropdown">
-            <a class="dropdown-toggle" data-toggle="dropdown" href="#" id="download">Lumen <span class="caret"></span></a>
-            <ul class="dropdown-menu" aria-labelledby="download">
-              <li><a href="http://jsfiddle.net/bootswatch/gqhenoox/">Open Sandbox</a></li>
-              <li class="divider"></li>
-              <li><a href="./bootstrap.min.css">bootstrap.min.css</a></li>
-              <li><a href="./bootstrap.css">bootstrap.css</a></li>
-              <li class="divider"></li>
-              <li><a href="./variables.less">variables.less</a></li>
-              <li><a href="./bootswatch.less">bootswatch.less</a></li>
-              <li class="divider"></li>
-              <li><a href="./_variables.scss">_variables.scss</a></li>
-              <li><a href="./_bootswatch.scss">_bootswatch.scss</a></li>
-            </ul>
-          </li>
-        </ul>
-
-        <ul class="nav navbar-nav navbar-right">
-          <li><a href="http://builtwithbootstrap.com/" target="_blank">Built With Bootstrap</a></li>
-          <li><a href="https://wrapbootstrap.com/?ref=bsw" target="_blank">WrapBootstrap</a></li>
-        </ul>
-
-      </div>
-    </div>
-  </div>
-
-
- 
-
-
-
-
-<!--  <script type="text/javascript">
-/* <![CDATA[ */
-(function(){try{var s,a,i,j,r,c,l=document.getElementsByTagName("a"),t=document.createElement("textarea");for(i=0;l.length-i;i++){try{a=l[i].getAttribute("href");if(a&&a.indexOf("/cdn-cgi/l/email-protection") > -1  && (a.length > 28)){s='';j=27+ 1 + a.indexOf("/cdn-cgi/l/email-protection");if (a.length > j) {r=parseInt(a.substr(j,2),16);for(j+=2;a.length>j&&a.substr(j,1)!='X';j+=2){c=parseInt(a.substr(j,2),16)^r;s+=String.fromCharCode(c);}j+=1;s+=a.substr(j,a.length-j);}t.innerHTML=s.replace(/</g,"&lt;").replace(/>/g,"&gt;");l[i].setAttribute("href","mailto:"+t.value);}}catch(e){}}}catch(e){}})();
-/* ]]> */
-</script>-->
-
-
+<nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+	<div class="container">
+  	<div class="navbar-header">
+    		<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".upper-navbar">
+      		<span class="sr-only">Toggle navigation</span>
+      		<span class="icon-bar"></span>
+      		<span class="icon-bar"></span>
+      		<span class="icon-bar"></span>
+    		</button>
+    
+    		<a class="navbar-brand" href="http://localhost:8080/test/" title="My Project" rel="home">Refugee Helper</a>
+    
+  		<form class="navbar-form pull-left" role="search" method="get" id="searchform" action="http://localhost:8080/test/">
+  		<div class="input-group">
+  			<!--<div class="input-group-btn">
+  				<button type="button" id="searchcategory" value="BLOG" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-expanded="false">BLOG <span class="caret"></span></button>
+  
+      				<ul id="searchdropdown" class="dropdown-menu" role="menu">
+        					<li><a href="javascript:void(0)">BLOG</a></li>
+        					<li><a href="javascript:void(0)">FORUM</a></li>
+        					<li><a href="javascript:void(0)">DOCS</a></li>
+    					<li class="divider"></li>
+        					<li><a href="javascript:void(0)">ANY</a></li>          
+      				</ul>
+  			</div>-->
+  			<input type="text" class="form-control" value="" placeholder="Search..." name="s" id="s" size="50">
+  			<div class="input-group-btn">
+  				<button type="submit" id="searchsubmit" value="Search" class="btn btn-success"><span class="glyphicon glyphicon-search"></span></button>
+  			</div>
+  		</div>
+  		</form>    
+		</div><!-- /.navbar-header -->
+  	<div class="collapse navbar-collapse upper-navbar">    	 
+  		<ul id="menu-topmenu" class="nav navbar-nav navbar-right">
+  			<li id="menu-item-1"><a href="#one">Profile</a></li>
+  		</ul>	  
+   	</div><!-- /.navbar-collapse -->
+	</div>
+</nav>
