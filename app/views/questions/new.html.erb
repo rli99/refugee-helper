@@ -1,32 +1,29 @@
 </br></br></br>
-<center><h1>Log in</h1></center>
+<center><h1>New Question</h1></center>
 </br>
 
-<section id="forum-new-post-container" class="col-xs-6 col-sm-6 col-md-6 col-lg-6 col-xs-offset-3 col-sm-offset-3 col-lg-offset-3 col-md-offset-3">
-    <%= form_for @question, url: {action: "create"} do |f| %>
-
-        <div class="col-lg-10">
+<div class="row">
+    <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6 col-xs-offset-3 col-sm-offset-3 col-lg-offset-3 col-md-offset-3">
+        <%= form_for @question, url: {action: "create"} do |f| %>
+    
+            
             <%= label_tag(:title, "Title") %>
             <%= f.text_field :title, class: 'form-control' %>
-        </div>
-        </br>
 
-        </br>
-        <div class="col-lg-10">
+            </br>
+    
+            </br>
             <%= label_tag(:category, "Category") %>
             <select class="form-control" id="select">
               <%= options_for_select(['Shelter','Food', 'Health','Education','Job','Family']) %>
             </select>
-        </div>
-        </br></br>
-        <div class="col-lg-10">
+            </br></br>
             <%= label_tag(:content, "Content") %>
-            <%= f.text_area (:content), class:"col-lg-2 form-control" %>
-        </div>
-        </br></br>
-        <div class="col-lg-10">
+            <%= f.text_area (:content), class:"form-control", style: "height: 120px" %>
+            </br>
             <%= f.submit "Create", class:"btn btn-primary pull-right" %>
-        </div>
 
-    <% end %>
-</section>
+    
+        <% end %>
+    </div>
+</div>
