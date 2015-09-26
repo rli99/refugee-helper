@@ -1,12 +1,22 @@
 
 <main id="ticket-confirmation-container">
-    <div class="col-xs-12 col-sm-8 col-md-8 col-lg-8 col-sm-offset-2 col-md-offset-2 col-lg-offset-2">
-        <div>Your Ticket Number is</div>
-        <div id="ticket-number">
-        <%= @ticket %>
-        </div>
-        <div>
-        Please use the ticket number to search your question later
+    <div class="row">
+        <div id="ticket-alert" class="col-xs-12 col-sm-8 col-md-8 col-lg-8 col-sm-offset-2 col-md-offset-2 col-lg-offset-2">
+            <div>Your Ticket Number is</div>
+            <div id="ticket-number">
+            <%= @ticket %>
+            </div>
+            <div>
+            Please use the ticket number to search your question later
+            </div>
         </div>
     </div>
+    </br>
+    </br>
+    <div class="row">
+        <div class="col-xs-12 col-sm-8 col-md-8 col-lg-8 col-sm-offset-2 col-md-offset-2 col-lg-offset-2" style="text-align: center">
+            <%= link_to "Back to Home", root_path, {class:"btn btn-lg btn-primary"} %>
+        </div>
+    </div>
+
 </main>
