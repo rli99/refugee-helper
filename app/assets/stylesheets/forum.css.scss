@@ -1,0 +1,43 @@
+@import "constant";
+#forum-container{
+    height: 100%;
+    width: 100%;
+}
+#forum-new-post-container{
+    margin-top: 50px;
+    @include border-radius(10px);
+    @include center-by-percentage(50%);
+    height: 70%;
+    background-color: $form-background-color;
+
+    >form{
+        margin-top: 10px;
+        >div{
+            margin: 15px 0 15px 0;
+        }
+    }
+    textarea{
+        height: 30%;
+        width: 100%;
+        resize: none;
+    }
+    input[type="text"]{
+        border: 0;
+        width: 100%;
+        height: 30px;
+    }
+}
+.forum-form-row{
+    label,input[type="text"],select{
+        @include font-calculator(20/16);
+    }
+    
+}
+@include respond-to(860px) {
+    .forum-form-row{
+        label,input[type="text"],select{
+            @include font-calculator(16/16);
+        }
+        
+    }
+}
