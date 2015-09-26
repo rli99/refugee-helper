@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150926192939) do
+ActiveRecord::Schema.define(version: 20150926201235) do
 
   create_table "answers", force: :cascade do |t|
     t.text     "content"
@@ -19,14 +19,13 @@ ActiveRecord::Schema.define(version: 20150926192939) do
     t.datetime "updated_at",  null: false
     t.integer  "question_id"
     t.integer  "user_id"
-    t.integer  "report_id"
-    t.integer  "like"
     t.integer  "report"
+    t.integer  "like"
   end
 
   create_table "likes", force: :cascade do |t|
     t.integer "answer_id"
-    t.integer "users_id"
+    t.integer "user_id"
   end
 
   create_table "questions", force: :cascade do |t|
