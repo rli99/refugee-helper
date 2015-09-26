@@ -1,6 +1,11 @@
 Rails.application.routes.draw do
-  root 'pages#landing'
 
+  root 'pages#home'
+  get 'health' => 'pages#health'
+  get 'shelter' => 'pages#shelter'
+  get 'food' => 'pages#food'
+  get 'family' => 'pages#family'
+  
   get '/login'=>'sessions#new'
   post '/login' => 'sessions#create'
   get '/logout' => 'sessions#destroy'
@@ -8,6 +13,7 @@ Rails.application.routes.draw do
   get '/signup' => 'users#new'
   post '/users' => 'users#create'
   resources :questions, only: [:show, :new, :create, :index, :show]
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

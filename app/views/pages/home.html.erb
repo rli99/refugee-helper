@@ -41,3 +41,45 @@
     </a>
 </header>
 
+
+
+<div class="container">
+    <div class="health">
+		<%= link_to image_tag("health"), health_path %>
+		<p>Health</p>
+	</div>
+
+    <div class="shelter">
+		<%= link_to image_tag("shelter"), shelter_path %>
+		<p>Shelter</p>
+	</div>
+	
+	<div class="food">
+		<%= link_to image_tag("food"), food_path %>
+		<p>Food</p>
+	</div>
+    
+	<div class="family">
+		<%= link_to image_tag("family"), family_path %>
+		<p>Family</p>
+	</div>
+
+</div>
+
+<div class="container">
+	
+    <div class="FAQ">
+		<table>
+
+		  <% @questions.each do |question| %>
+		    <tr>
+		      <td><%= question.title %></td>
+		      <td><%= question.description %></td>
+		    </tr>
+		  <% end %>
+		</table>
+	</div>
+	
+	
+</div>
+
