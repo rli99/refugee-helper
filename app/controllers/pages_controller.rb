@@ -4,22 +4,20 @@ class PagesController < ApplicationController
    end
     
    def health
-      @questions = Question.paginate(:page => params[:page], :per_page => 5)
+      @questions = Question.where(category: "health").paginate(:page => params[:page], :per_page => 5)
    end
    
    def shelter
-      @questions = Question.paginate(:page => params[:page], :per_page => 5)
+      @questions = Question.where(category: "shelter").paginate(:page => params[:page], :per_page => 5)
    end
    
    def food
-      @questions = Question.where(category: "food")
-      @questions = Question.paginate(:page => params[:page], :per_page => 5)
+      @questions = Question.where(category: "food").paginate(:page => params[:page], :per_page => 5)
       
    end
    
    def family
-      @questions = Question.paginate(:page => params[:page], :per_page => 5)
-      Question.where(category: "family")
+      @questions = Question.where(category: "family").paginate(:page => params[:page], :per_page => 5)
    end
    
    def findFAQ
