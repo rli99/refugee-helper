@@ -32,7 +32,7 @@ gem 'responders', '~> 2.0'
 # gem 'debugger', group: [:development, :test]
 
 gem 'bcrypt'
-
+gem 'puma'
 gem 'react-rails'
 gem 'will_paginate', '~> 3.0.6'
 group :development, :test do

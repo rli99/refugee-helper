@@ -1,0 +1,31 @@
+@import "constant";
+
+#forum-new-answer-container{
+    height: 80%;
+    margin-top: 50px;
+    >form{
+        margin-bottom: 75px;
+    }
+    >div{
+        margin: 10px 0 10px 0;
+        font-weight: bold;
+        @include font-calculator(18/16);
+    }
+    textarea{
+        height: 30%;
+        width: 100%;
+        resize: none;
+    }
+}
+
+.forum-question-answer{
+    border-bottom: 1px black solid;
+    border-top: 1px black solid;
+    margin: 10px 0 10px 0;
+    padding: 10px 10px 10px 10px;
+}
+
+.answer-likes{
+    font-weight:bold;
+    @include font-calculator(18/16);
+}
