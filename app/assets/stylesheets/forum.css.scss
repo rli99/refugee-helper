@@ -26,6 +26,9 @@
         width: 100%;
         height: 30px;
     }
+    select{
+        width: 60%;
+    }
 }
 .forum-form-row{
     label,input[type="text"],select{
@@ -37,7 +40,8 @@
     .forum-form-row{
         label,input[type="text"],select{
             @include font-calculator(16/16);
+            width: 100% !important;
         }
-        
     }
 }
+
