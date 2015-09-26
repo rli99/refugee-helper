@@ -2,7 +2,7 @@ class QuestionsController < ApplicationController
     @@Question_Counter = 0
     respond_to :html
     def index
-        @questions = Question.paginate(:page => params[:page], :per_page => 25)
+        @questions = Question.paginate(:page => params[:page], :per_page => 5)
     end
     def new
         @question = Question.new
@@ -23,6 +23,8 @@ class QuestionsController < ApplicationController
         @question = Question.find(params[:id]) 
         @question.view += 1
         @question.save
+        @answer = Answer.new
+        @answers = Answer.all
         
     end
     
