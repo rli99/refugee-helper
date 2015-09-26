@@ -24,4 +24,5 @@ Rails.application.routes.draw do
   get 'report' => 'answers#report'
   get 'like' => 'answers#like'
 
+  get 'confirmation' => 'questions#showticket'
 end

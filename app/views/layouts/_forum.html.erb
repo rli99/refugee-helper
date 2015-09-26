@@ -12,7 +12,7 @@
                                 <td class="forum-question-title"><%= question.title %></td>
                                 <td class="forum-question-ticket-id"><%= question.ticket_id %></td>
                                 <td class="forum-question-timestamp"><%= question.created_at.strftime("%F") %></td>
-                                <td><%= link_to "Answer", question, {class:"btn btn-primary"} %></td>
+                                <td><%= link_to "View Answers", question, {class:"btn btn-primary"} %></td>
                         </tr>
                 <% end %>
             </table>
