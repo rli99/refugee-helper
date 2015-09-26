@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
 
-  root 'pages#home'
+  root 'pages#home'       
   get 'health' => 'pages#health'
   get 'shelter' => 'pages#shelter'
   get 'food' => 'pages#food'
