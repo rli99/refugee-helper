@@ -17,26 +17,34 @@
             </br>
         <section id="forum-question-answer-container">
             <% @answers.each do |answer| %>
-                <div class="forum-question-answer">
-                    By <%= answer.user.name %>
-                    </br>
-                    <%= answer.content %>
-                    </br>
-                    <%= link_to "Helpful", like_path(answer_id: answer.id), class:"btn btn-primary" %>
-                    <%= link_to "Report", report_path(answer_id: answer.id), class:"btn btn-danger" %>
+                <div class="row forum-question-answer">
+                    <div class="col-xs-9 col-sm-9 col-md-9 col-lg-9">
+                        By <%= answer.user.name %>
+                        </br>
+                        <%= answer.content %>
+                        </br>
+                        <% if authenticated? %>
+                            <%= link_to "Helpful", like_path(answer_id: answer.id), class:"btn btn-primary" %>
+                            <%= link_to "Report", report_path(answer_id: answer.id), class:"btn btn-danger" %>
+                        <% end %>
+                    </div>
+                    <div class="answer-likes col-xs-1 col-sm-1 col-md-1 col-lg-1 col-xs-offset-2 col-sm-offset-2 col-md-offset-2 col-lg-offset-2">
+                        <%= answer.like %>
+                    </div>
                 </div>
             <% end %>
         </section>
-
-        <%= form_for @answer, :url => answers_path do |f| %>
-            </br>
-            </br>
-            <%= label_tag(:content, "Answer") %>
-            <%= text_area_tag "answer[content]" %>
-            <%= hidden_field_tag "question_id", @question.id %>
-            </br>
-            </br>
-            <%= f.submit "Answer Question", class:"btn btn-primary pull-right" %>
+        <% if authenticated? %>
+            <%= form_for @answer, :url => answers_path do |f| %>
+                </br>
+                </br>
+                <%= label_tag(:content, "Answer") %>
+                <%= text_area_tag "answer[content]" %>
+                <%= hidden_field_tag "question_id", @question.id %>
+                </br>
+                </br>
+                <%= f.submit "Answer Question", class:"btn btn-primary pull-right" %>
+            <% end %>
         <% end %>
     </section>
 </main>

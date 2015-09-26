@@ -1,4 +1,5 @@
 class AnswersController < ApplicationController
+    before_action :authorize
     respond_to :html
    def create
         @answer = Answer.new(answer_params)

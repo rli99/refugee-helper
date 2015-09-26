@@ -12,7 +12,7 @@ class QuestionsController < ApplicationController
         (@question.save) ?
             (   
                 @@Question_Counter+=1
-                respond_with(nil, location: root_path)) 
+                respond_with(nil, location: confirmation_path(ticket: @question.ticket_id))) 
             :
             (render action: 'new')
         
@@ -22,10 +22,13 @@ class QuestionsController < ApplicationController
         @question.view += 1
         @question.save
         @answer = Answer.new
-        @answers = @question.answers
+        @answers = @question.answers.order(like: :DESC)
         
     end
     
+    def showticket
+        @ticket = params[:ticket]
+    end
     private
         def question_param
             params.require(:question).permit(:title, :category, :content)

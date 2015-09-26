@@ -81,3 +81,29 @@
     margin: 5px 0 5px 0;
     padding: 10px 10px 10px 10px;
 }
+
+.answer-likes{
+    font-weight:bold;
+    @include font-calculator(18/16);
+}
+
+#ticket-confirmation-container{
+    height: 100%;
+    width: 100%;
+    margin-top: 100px;
+    >div{
+        height: 60%;
+        background-color: red;
+        @include border-radius(10px);
+        text-align: center;
+        background-color:rgba(246,237,116,0.5);
+        font-weight: bold;
+        @include font-calculator(24/16);
+        >div{
+            margin: 25px 0 25px 0;
+        }
+        #ticket-number{
+            @include font-calculator(36/16);
+        }
+    }
+}
