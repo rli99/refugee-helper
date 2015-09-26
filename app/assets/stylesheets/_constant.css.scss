@@ -1,0 +1,26 @@
+$form-background-color: rgba(150,228,247,0.4);
+
+@mixin border-radius($radius) {
+  -webkit-border-radius: $radius;
+     -moz-border-radius: $radius;
+      -ms-border-radius: $radius;
+          border-radius: $radius;
+}
+
+@mixin center-by-percentage($value) {
+    position: relative;
+    top: $value;
+    -webkit-transform: translateY(-$value);
+    -ms-transform: translateY(-$value);
+    transform: translateY(-$value);
+}
+
+@mixin font-calculator($fontSize){
+  font-size: $fontSize + em;
+}
+
+@mixin respond-to($width){
+    @media screen and (max-width: $width) {
+        @content
+    }
+}
