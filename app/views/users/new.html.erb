@@ -11,13 +11,13 @@
         <%= f.text_field :name, class: 'form-control' %>
         </br>
         <%= f.label :nationality %>
-        <%= f.text_field :nationality, class: 'form-control', :autocomplete => :off %>
+        <%= f.text_field :nationality, class: 'form-control', input_html: {autocomplete: 'off'} %>
         </br>
         <%= f.label :dob %>
         <%= f.date_field :dob, class: 'form-control' %>
         </br>
         <%= f.label :password %>
-        <%= f.password_field :password, class: 'form-control', :autocomplete => :off %>
+        <%= f.password_field :password, class: 'form-control', input_html: {autocomplete: 'off'} %>
         </br>
         <%= f.label :password_confirmation, "Password Confirmation" %>
         <%= f.password_field :password_confirmation, class: 'form-control' %>

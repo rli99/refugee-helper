@@ -2,6 +2,10 @@ class PagesController < ApplicationController
    def home
        findFAQ
    end
+   
+   def career
+      @questions = Question.where(category: "Job").paginate(:page => params[:page], :per_page => 5)
+   end
     
    def health
       @questions = Question.where(category: "health").paginate(:page => params[:page], :per_page => 5)
@@ -13,7 +17,6 @@ class PagesController < ApplicationController
    
    def food
       @questions = Question.where(category: "food").paginate(:page => params[:page], :per_page => 5)
-      
    end
    
    def family
