@@ -22,6 +22,6 @@ Rails.application.routes.draw do
   resources :answers, only: [:create]
   
   get 'report' => 'answers#report'
-  get 'like' => 'answers#report'
+  get 'like' => 'answers#like'
 
 end

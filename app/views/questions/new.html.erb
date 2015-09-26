@@ -1,25 +1,29 @@
-<main id="forum-container">
-    <section id="forum-new-post-container" class="col-xs-6 col-sm-6 col-md-6 col-lg-6 col-xs-offset-3 col-sm-offset-3 col-lg-offset-3 col-md-offset-3">
+</br></br></br>
+<center><h1>New Question</h1></center>
+</br>
+
+<div class="row">
+    <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6 col-xs-offset-3 col-sm-offset-3 col-lg-offset-3 col-md-offset-3">
         <%= form_for @question, url: {action: "create"} do |f| %>
-
-
+    
+            
             <%= label_tag(:title, "Title") %>
             <%= f.text_field :title, class: 'form-control' %>
+
             </br>
- 
+    
+            </br>
             <%= label_tag(:category, "Category") %>
-            </br>
-            <%= f.select (:category),  
-                options_for_select(['Shelter/Food', 'Medical Advice','Education/Training', 'Job']),
-                {class: 'form-control'} %>
-            </br>
-            </br>
+            <select class="form-control" id="select">
+              <%= options_for_select(['Shelter','Food', 'Health','Education','Job','Family']) %>
+            </select>
+            </br></br>
             <%= label_tag(:content, "Content") %>
-            <%= f.text_area (:content) %>
-            </br>
+            <%= f.text_area (:content), class:"form-control", style: "height: 120px" %>
             </br>
             <%= f.submit "Create", class:"btn btn-primary pull-right" %>
 
+    
         <% end %>
-    </section>
-</main>
+    </div>
+</div>
