@@ -2,9 +2,9 @@
 #forum-container{
     height: 100%;
     width: 100%;
+    margin-top: 50px;
 }
 #forum-new-post-container{
-    margin-top: 50px;
     @include border-radius(10px);
     @include center-by-percentage(50%);
     height: 70%;
@@ -45,3 +45,14 @@
     }
 }
 
+
+
+
+#forum-index-container{
+    height: 70%;
+    margin-top: 100px;
+    .paginate{
+        width: 100%;
+    }
+
+}
