@@ -22,7 +22,7 @@ class QuestionsController < ApplicationController
         @question.view += 1
         @question.save
         @answer = Answer.new
-        @answers = Answer.all
+        @answers = @question.answers
         
     end
     

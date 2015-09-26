@@ -21,6 +21,9 @@
                     By <%= answer.user.name %>
                     </br>
                     <%= answer.content %>
+                    </br>
+                    <%= link_to "Helpful", report_path(answer_id: answer.id), class:"btn btn-primary" %>
+                    <%= link_to "Report", like_path(answer_id: answer.id), class:"btn btn-danger" %>
                 </div>
             <% end %>
         </section>
