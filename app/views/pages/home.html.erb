@@ -68,13 +68,17 @@
 
 <div class="container">
 	
+	<h1>FAQ</h1>
     <div class="FAQ">
 		<table>
-
+		  <tr>
+		  	<td>Questions</td>
+		  	
+		  </tr>
 		  <% @questions.each do |question| %>
 		    <tr>
 		      <td><%= question.title %></td>
-		      <td><%= question.description %></td>
+		      <td><%= question.view %></td>
 		    </tr>
 		  <% end %>
 		</table>
@@ -82,4 +86,3 @@
 	
 	
 </div>
-

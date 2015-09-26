@@ -20,6 +20,6 @@ class PagesController < ApplicationController
    end
    
    def findFAQ
-      @questions = Question.all.order(:view)
+      @questions = Question.all.order('view DESC').limit(10)
    end
 end
