@@ -7,9 +7,12 @@ class AnswersController < ApplicationController
         @answer.question = Question.find(params[:question_id])
         (@answer.save) ?
             (   
+                flash[:success] = "Answer Posted."
                 respond_with(nil, location: question_path(Question.find(params[:question_id])))) 
             :
-                (respond_with(nil, location: question_path(Question.find(params[:question_id]))))
+                (
+                    flash[:danger] = "An error occured. Failed to post the Answer to the Question."
+                    respond_with(nil, location: question_path(Question.find(params[:question_id]))))
    end
    def report
        @answer = Answer.find(params[:answer_id])
@@ -18,9 +21,13 @@ class AnswersController < ApplicationController
        @report.answer = @answer
        @report.user = User.find(session[:user_id])
        (@answer.save && @report.save) ?
-        (redirect_to @answer.question )
+        (
+            flash[:success] = "Successfully Reported the Answer."
+            redirect_to @answer.question )
         :
-        (redirect_to @answer.question )
+        (
+            flash[:danger] = "An error occured. Could not report the Answer."
+            redirect_to @answer.question )
        
    end
    def like
@@ -32,9 +39,14 @@ class AnswersController < ApplicationController
        @like.user = User.find(session[:user_id])
        
        (@answer.save && @like.save) ?
-        (redirect_to @answer.question )
+        (
+            flash[:success] = "Successfully Liked the Answer."
+            redirect_to @answer.question
+            )
         :
-        (redirect_to @answer.question )
+        (
+            flash[:success] = "An error occured. Could not like the Answer."
+            redirect_to @answer.question )
        
    end  
    private

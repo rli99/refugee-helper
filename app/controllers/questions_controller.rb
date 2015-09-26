@@ -5,6 +5,8 @@ class QuestionsController < ApplicationController
     def new
         @question = Question.new
     end
+    
+    
     def create
         @question = Question.new(question_param)
         @question.ticket_id = @@Question_Counter
@@ -12,11 +14,15 @@ class QuestionsController < ApplicationController
         (@question.save) ?
             (   
                 @@Question_Counter+=1
-                respond_with(nil, location: confirmation_path(ticket: @question.ticket_id))) 
+                respond_with(nil, location: confirmation_path(ticket: @question.ticket_id))
+            ) 
             :
-            (render action: 'new')
-        
+            (
+                flash[:danger] = "An error occured. Failed to post the question."
+                render action: 'new')
     end
+    
+    
     def show
         @question = Question.find(params[:id]) 
         @question.view += 1
