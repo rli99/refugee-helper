@@ -5,6 +5,8 @@ Rails.application.routes.draw do
   get 'shelter' => 'pages#shelter'
   get 'food' => 'pages#food'
   get 'family' => 'pages#family'
+  get 'education' => 'pages#education'
+  get 'career' => 'pages#career'
   
   get '/login'=>'sessions#new'
   post '/login' => 'sessions#create'

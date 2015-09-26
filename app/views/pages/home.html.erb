@@ -58,7 +58,7 @@
                     <div class="col-lg-5 col-sm-6">
                         <hr class="section-heading-spacer">
                         <div class="clearfix"></div>
-                        <h2 class="section-heading">Finding Shelters For You</h2>
+                        <h2><%= link_to "Finding Shelters For You", shelter_path, :class=>"section-heading" %></h2>
                         <p class="lead"></p>
                     </div>
                     <div class="col-lg-5 col-lg-offset-2 col-sm-6">
@@ -73,7 +73,7 @@
                     <div class="col-lg-5 col-lg-offset-1 col-sm-push-6  col-sm-6">
                         <hr class="section-heading-spacer">
                         <div class="clearfix"></div>
-                        <h2 class="section-heading">Finding Shelters For You</h2>
+                        <h2><%= link_to "Finding Food For You", food_path, :class=>"section-heading" %></h2>
                         <p class="lead"></p>
                     </div>
                     <div class="col-lg-5 col-sm-pull-6 col-sm-6">
@@ -88,8 +88,8 @@
                     <div class="col-lg-5 col-sm-6">
                         <hr class="section-heading-spacer">
                         <div class="clearfix"></div>
-                        <h2 class="section-heading">Google Web Fonts and<br>Font Awesome Icons</h2>
-                        <p class="lead">This template features the 'Lato' font, part of the <a target="_blank" href="http://www.google.com/fonts">Google Web Font library</a>, as well as <a target="_blank" href="http://fontawesome.io">icons from Font Awesome</a>.</p>
+                        <h2><%= link_to "Health Carer", health_path, :class=>"section-heading" %></h2>
+                        <p class="lead"></p>
                     </div>
                     <div class="col-lg-5 col-lg-offset-2 col-sm-6">
                         <img class="img-responsive" src="http://www.thenational.ae/storyimage/AB/20150324/ARTICLE/150329492/AR/0/&MaxW=640&imageVersion=default&AR-150329492.jpg" alt="">
@@ -103,7 +103,7 @@
                     <div class="col-lg-5 col-lg-offset-1 col-sm-push-6  col-sm-6">
                         <hr class="section-heading-spacer">
                         <div class="clearfix"></div>
-                        <h2 class="section-heading">Finding Shelters For You</h2>
+                        <h2><%= link_to "Looking for your family", family_path, :class=>"section-heading" %></h2>
                         <p class="lead"></p>
                     </div>
                     <div class="col-lg-5 col-sm-pull-6 col-sm-6">
@@ -118,8 +118,8 @@
                     <div class="col-lg-5 col-sm-6">
                         <hr class="section-heading-spacer">
                         <div class="clearfix"></div>
-                        <h2 class="section-heading">Google Web Fonts and<br>Font Awesome Icons</h2>
-                        <p class="lead">This template features the 'Lato' font, part of the <a target="_blank" href="http://www.google.com/fonts">Google Web Font library</a>, as well as <a target="_blank" href="http://fontawesome.io">icons from Font Awesome</a>.</p>
+                        <h2><%= link_to "Education", education_path, :class=>"section-heading" %></h2>
+                        <p class="lead"></p>
                     </div>
                     <div class="col-lg-5 col-lg-offset-2 col-sm-6">
                         <img class="img-responsive" src="http://www.thenational.ae/storyimage/AB/20150324/ARTICLE/150329492/AR/0/&MaxW=640&imageVersion=default&AR-150329492.jpg" alt="">
@@ -127,38 +127,31 @@
                 </div>
             </div>
         </div>
-        
+        <div class="content-section-b">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-5 col-lg-offset-1 col-sm-push-6  col-sm-6">
+                        <hr class="section-heading-spacer">
+                        <div class="clearfix"></div>
+                        <h2><%= link_to "Career", career_path, :class=>"section-heading" %></h2>
+                        <p class="lead"></p>
+                    </div>
+                    <div class="col-lg-5 col-sm-pull-6 col-sm-6">
+                        <img class="img-responsive" src="http://www.thenational.ae/storyimage/AB/20150324/ARTICLE/150329492/AR/0/&MaxW=640&imageVersion=default&AR-150329492.jpg" alt="">
+                    </div>
+                </div>
+            </div>
+        </div>
         <div class="row header">
 			<div class="container" style="text-align: center">
 			    </br>
+			    <hr class="section-heading-spacer">
 				<h2>Become a Service Provider</h2>
 				<p>donate!!!!</p>
 				</br></br></br>
 			</div>
 		</div>
     </div>
-</div>
-<div class="container">
-    <div class="health">
-		<%= link_to image_tag("health"), health_path %>
-		<p>Health</p>
-	</div>
-
-    <div class="shelter">
-		<%= link_to image_tag("shelter"), shelter_path %>
-		<p>Shelter</p>
-	</div>
-	
-	<div class="food">
-		<%= link_to image_tag("food"), food_path %>
-		<p>Food</p>
-	</div>
-    
-	<div class="family">
-		<%= link_to image_tag("family"), family_path %>
-		<p>Family</p>
-	</div>
-
 </div>
 
 <div class="container">
@@ -181,4 +174,3 @@
 	
 	
 </div>
-<%= render 'layouts/footer' %>
