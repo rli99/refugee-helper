@@ -8,6 +8,9 @@ Rails.application.routes.draw do
   get '/signup' => 'users#new'
   post '/users' => 'users#create'
   resources :questions, only: [:show, :new, :create, :index, :show]
+  
+  get '/profile' => 'users#profile'
+  post '/profile' => 'users#update'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
