@@ -27,5 +27,9 @@ Rails.application.routes.draw do
   get 'confirmation' => 'questions#showticket'
   get 'donate' => 'pages#donate'
   get 'answered' => 'pages#answered'
+
   get 'services' => 'pages#services'
+
+  get 'search' => 'questions#search'
+
 end
