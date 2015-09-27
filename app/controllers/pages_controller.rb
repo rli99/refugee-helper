@@ -22,6 +22,10 @@ class PagesController < ApplicationController
    def family
       @questions = Question.where(category: "Family").paginate(:page => params[:page], :per_page => 5)
    end
+   
+   def education
+      @questions = Question.where(category: "Education").paginate(:page => params[:page], :per_page => 5)
+   end
    def answered
       @questions = Question.joins(:answers).paginate(:page => params[:page], :per_page => 5)
    end
