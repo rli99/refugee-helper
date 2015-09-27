@@ -52,7 +52,7 @@ class AnswersController < ApplicationController
             )
         :
         (
-            flash[:success] = "An error occured. Could not like the Answer."
+            flash[:daner] = "An error occured. Could not like the Answer."
             redirect_to @answer.question )
        
    end  
