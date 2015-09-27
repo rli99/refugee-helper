@@ -47,9 +47,10 @@ class AnswersController < ApplicationController
        @like.answer = @answer
        @like.user = User.find(session[:user_id])
        
-       (@answer.save && @like.save) ?
+       (@like.save) ?
         (
             @answer.like += 1
+            @answer.save
             flash[:success] = "Successfully Liked the Answer."
             redirect_to @answer.question
             )
