@@ -46,9 +46,9 @@ class AnswersController < ApplicationController
        @like = Like.new
        @like.answer = @answer
        @like.user = User.find(session[:user_id])
-       
        (@like.save) ?
         (
+            
             @answer.like += 1
             @answer.save
             flash[:success] = "Successfully Liked the Answer."
