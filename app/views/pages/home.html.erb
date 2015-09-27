@@ -1,6 +1,21 @@
 <!-- Full Page Image Background Carousel Header -->
-<%= render 'layouts/carousel' %>
-
+</br>
+<section class="row main-wrapper">
+    <div id="main-container" class="col-xs-10 col-sm-10 col-md-10 col-lg-10 col-xs-offset-1 col-sm-offset-1 col-md-offset-1 col-lg-offset-1">
+        <div class="main-background">
+            <%= link_to new_question_path do %>
+            <div class="link-container col-xs-5 col-sm-5 col-md-5 col-lg-5 col-xs-offset-1 col-sm-offset-1 col-lg-offset-1 col-md-offset-1">
+                <p>Ask a Question</p>
+            </div>    
+            <%end%>
+            <%= link_to answered_path do %>
+            <div class="link-container col-xs-5 col-sm-5 col-md-5 col-lg-5">
+                <p>See Answered Questions</p>
+            </div>
+            <% end %>
+        </div>
+    </div>
+</section>
 <a  name="interest"></a>
 <div id="features">
 	<div class="container">

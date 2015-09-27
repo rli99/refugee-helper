@@ -25,4 +25,5 @@ Rails.application.routes.draw do
   get 'like' => 'answers#like'
 
   get 'confirmation' => 'questions#showticket'
+  get 'answered' => 'pages#answered'
 end

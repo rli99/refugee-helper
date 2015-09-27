@@ -17,9 +17,15 @@ class AnswersController < ApplicationController
    def report
        @answer = Answer.find(params[:answer_id])
        @answer.report += 1
+       (@answer.report >= 1 || ((self.like-self.report) < -5)) ?
+        (
+            @answer.destroy
+            redirect_to @answer.question) :
+        (
        @report = Report.new
        @report.answer = @answer
        @report.user = User.find(session[:user_id])
+       
        (@answer.save && @report.save) ?
         (
             flash[:success] = "Successfully Reported the Answer."
@@ -28,6 +34,7 @@ class AnswersController < ApplicationController
         (
             flash[:danger] = "An error occured. Could not report the Answer."
             redirect_to @answer.question )
+        )
        
    end
    def like

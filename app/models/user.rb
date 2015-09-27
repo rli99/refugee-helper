@@ -1,7 +1,7 @@
 class User < ActiveRecord::Base
-    has_many :answers
-    has_many :reports
-    has_many :likes
+    has_many :answers, dependent: :destroy
+    has_many :reports, dependent: :destroy
+    has_many :likes, dependent: :destroy
   has_secure_password
 
 end
