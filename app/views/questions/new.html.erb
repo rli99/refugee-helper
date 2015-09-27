@@ -12,9 +12,10 @@
     
             </br>
             <%= label_tag(:category, "Category") %>
-            <select class="form-control" id="select">
-              <%= options_for_select(['Shelter','Food', 'Health','Education','Job','Family']) %>
-            </select>
+            </br>
+            <%= f.select "category", 
+            options_for_select(['Shelter','Food', 'Health','Education','Job','Family']), {}, 
+            {required: 'true', class: 'form-control'} %>
             </br></br>
             <%= label_tag(:content, "Content") %>
             <%= f.text_area (:content), class:"form-control", style: "height: 120px" %>
