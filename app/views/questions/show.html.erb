@@ -38,6 +38,7 @@
                         </br>
                         </br>
                         <% if authenticated? %>
+                            
                             <%= link_to "Helpful", like_path(answer_id: answer.id), class:"btn btn-primary" %>
                             <%= link_to "Report", report_path(answer_id: answer.id), class:"btn btn-danger" %>
                         <% end %>
