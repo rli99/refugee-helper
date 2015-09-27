@@ -15,7 +15,7 @@
   		
       <%= form_tag search_path, {:method=>"get",:class => 'navbar-form pull-left', :id=>"searchform"} do |f| %>
           <div class="input-group">
-            <%= text_field_tag :search, params[:search], {:class=> 'form-control', :plaeholder=>"Search...", :id=>"s", :size=>"50"} %>
+            <%= text_field_tag :search, params[:search], {:class=> 'form-control', :plaeholder=>"Search...", :id=>"s", :size=>"50", :placeholder => "Search for a ticket number"} %>
         		<div class="input-group-btn">
         			<%= submit_tag "Search", {:class=>"btn btn-success", :id=>"searchsubmit"} do %>
         			  <span class="glyphicon glyphicon-search"></span>
