@@ -1,21 +1,32 @@
 <!-- Full Page Image Background Carousel Header -->
-</br>
-<section class="row main-wrapper">
-    <div id="main-container" class="col-xs-10 col-sm-10 col-md-10 col-lg-10 col-xs-offset-1 col-sm-offset-1 col-md-offset-1 col-lg-offset-1">
-        <div class="main-background">
-            <%= link_to new_question_path do %>
-            <div class="link-container col-xs-5 col-sm-5 col-md-5 col-lg-5 col-xs-offset-1 col-sm-offset-1 col-lg-offset-1 col-md-offset-1">
-                <p>Ask a Question</p>
-            </div>    
-            <%end%>
-            <%= link_to answered_path do %>
-            <div class="link-container col-xs-5 col-sm-5 col-md-5 col-lg-5">
-                <p>See Answered Questions</p>
+<header id="myCarousel" class="carousel slide">
+    <!-- Indicators -->
+    <ol class="carousel-indicators">
+        <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+    </ol>
+
+    <!-- Wrapper for Slides -->
+    <div class="carousel-inner">
+        <div class="item active">
+            <!-- Set the second background image using inline CSS below. -->
+            <div class="fill" style="background-image:url('http://america.aljazeera.com/content/dam/ajam/images/articles/Syria_Refugee_101713.jpg');"></div>
+            <div class="carousel-caption">
+                <h1 style="text-align: center; font-weight: bold">Help your fellow refugee friends</h1>
+                <h3 style="text-align: center; padding-bottom: 20px" >And make the world a better place!</h3>
+                <li style="padding-bottom: 200px"><%= link_to "Ask a question", new_question_path, :class=>"btn btn-primary" %>
+                <%= link_to "See answered questions", answered_path, :class=>"btn btn-default" %></li>
             </div>
-            <% end %>
         </div>
     </div>
-</section>
+
+    <!-- Controls -->
+    <!--<a class="left carousel-control" href="#myCarousel" data-slide="prev">-->
+    <!--    <span class="icon-prev"></span>-->
+    <!--</a>-->
+    <!--<a class="right carousel-control" href="#myCarousel" data-slide="next">-->
+    <!--    <span class="icon-next"></span>-->
+    <!--</a>-->
+</header>
 <a  name="interest"></a>
 <div id="features">
 	<div class="container">
@@ -123,7 +134,7 @@
         <a  name="faq"></a>
         <div class="container">
 	    <hr class="section-heading-spacer"></br>
-	    <center><h1>Frequently asked questions</h1></center>
+	    <center><h1>FAQs</h1></center>
         <main id="forum-container">
         <section class="col-xs-12 col-sm-8 col-md-8 col-lg-8 col-sm-offset-2 col-md-offset-2 col-lg-offset-2">
             <table class="table table-striped table-hover ">
