@@ -27,7 +27,7 @@ class PagesController < ApplicationController
       @questions = Question.where(category: "Education").paginate(:page => params[:page], :per_page => 5)
    end
    def answered
-      @questions = Question.joins(:answers).paginate(:page => params[:page], :per_page => 5)
+      @questions = Question.joins(:answers).distinct.paginate(:page => params[:page], :per_page => 5)
    end
    def findFAQ
       @questions = Question.all.order('view DESC').limit(10)

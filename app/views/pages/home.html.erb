@@ -153,8 +153,18 @@
         <a  name="donate"></a>
 		<div class="container" style="text-align: center"></br>
 			<hr class="section-heading-spacer">
-			<h2><%= link_to 'Become a service provider', services_path %></h2>
-			<h3><%= link_to 'Donate!', donate_path %></h3></br></br></br>
+			<div class="row">
+			    <h2>Become a service provider</h2>
+    			<%= link_to 'Become a service provider', services_path do%>
+    			    <button class="btn btn-primary">Service Provider Registration</button>
+    			<% end %>
+			</div>
+			<div class="row">
+			    <h3>donate_path</h3>
+    			<%= link_to 'Donate!', donate_path do %>
+    			    <button class="btn btn-primary">Donate</button>
+    			<% end %>
+			</div>
 			</div>
 		</div>
     </div>
