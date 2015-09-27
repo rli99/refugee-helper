@@ -1,21 +1,32 @@
 <!-- Full Page Image Background Carousel Header -->
-</br>
-<section class="row main-wrapper">
-    <div id="main-container" class="col-xs-10 col-sm-10 col-md-10 col-lg-10 col-xs-offset-1 col-sm-offset-1 col-md-offset-1 col-lg-offset-1">
-        <div class="main-background">
-            <%= link_to new_question_path do %>
-            <div class="link-container col-xs-5 col-sm-5 col-md-5 col-lg-5 col-xs-offset-1 col-sm-offset-1 col-lg-offset-1 col-md-offset-1">
-                <p>Ask a Question</p>
-            </div>    
-            <%end%>
-            <%= link_to answered_path do %>
-            <div class="link-container col-xs-5 col-sm-5 col-md-5 col-lg-5">
-                <p>See Answered Questions</p>
+<header id="myCarousel" class="carousel slide">
+    <!-- Indicators -->
+    <ol class="carousel-indicators">
+        <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+    </ol>
+
+    <!-- Wrapper for Slides -->
+    <div class="carousel-inner">
+        <div class="item active">
+            <!-- Set the second background image using inline CSS below. -->
+            <div class="fill" style="background-image:url('http://america.aljazeera.com/content/dam/ajam/images/articles/Syria_Refugee_101713.jpg');"></div>
+            <div class="carousel-caption">
+                <h1 style="text-align: center; font-weight: bold">Help your fellow refugee friends</h1>
+                <h3 style="text-align: center; padding-bottom: 20px" >And make the world a better place!</h3>
+                <li style="padding-bottom: 200px"><%= link_to "Ask a question", new_question_path, :class=>"btn btn-primary" %>
+                <%= link_to "See answered questions", answered_path, :class=>"btn btn-default" %></li>
             </div>
-            <% end %>
         </div>
     </div>
-</section>
+
+    <!-- Controls -->
+    <!--<a class="left carousel-control" href="#myCarousel" data-slide="prev">-->
+    <!--    <span class="icon-prev"></span>-->
+    <!--</a>-->
+    <!--<a class="right carousel-control" href="#myCarousel" data-slide="next">-->
+    <!--    <span class="icon-next"></span>-->
+    <!--</a>-->
+</header>
 <a  name="interest"></a>
 <div id="features">
 	<div class="container">
@@ -123,27 +134,14 @@
         <a  name="faq"></a>
         <div class="container">
 	    <hr class="section-heading-spacer"></br>
-	    <center><h1>Frequently asked questions</h1></center>
+	    <center><h1>FAQs</h1></center>
         <main id="forum-container">
         <section class="col-xs-12 col-sm-8 col-md-8 col-lg-8 col-sm-offset-2 col-md-offset-2 col-lg-offset-2">
             <table class="table table-striped table-hover ">
-                <thead class="forum-question-row">
-                    <th class="col-xs-3 col-sm-3 col-md-3 col-lg-3">Title</th>
-                    <th class="col-xs-3 col-sm-3 col-md-3 col-lg-3">Description</th>
-                    <th class="col-xs-3 col-sm-3 col-md-3 col-lg-3">Views</th>
-                </thead>
                 <% len = [@questions.length, 10].min
                 @questions[0..len].each do |question| %>
                     <tr class="forum-question-row">
-                        <td class="forum-question-title"><%= question.title %></td>
-                        <% if question.content %>
-                            <% cl = [question.content.length, 30].min %>
-                            <td class="forum-question-ticket-id"><%= question.content[0..cl] %>...</td>
-                        <% else %>
-                            <td></td>
-                        <% end %>
-                        <td class="forum-question-timestamp"><%= question.view %></td>
-                        <td><%= link_to "View Answers", question, {class:"btn btn-primary"} %></td>
+                        <td><%= link_to question.title, question, {class:"forum-question-title"} %></td>
                     </tr>
                 <% end %>
             </table></br>
@@ -155,8 +153,18 @@
         <a  name="donate"></a>
 		<div class="container" style="text-align: center"></br>
 			<hr class="section-heading-spacer">
-			<h2><%= link_to 'Become a service provider', services_path %></h2>
-			<h3><%= link_to 'Donate!', donate_path %></h3></br></br></br>
+			<div class="row">
+			    <h2>Become a service provider</h2>
+    			<%= link_to 'Become a service provider', services_path do%>
+    			    <button class="btn btn-primary">Service Provider Registration</button>
+    			<% end %>
+			</div>
+			<div class="row">
+			    <h3>donate_path</h3>
+    			<%= link_to 'Donate!', donate_path do %>
+    			    <button class="btn btn-primary">Donate</button>
+    			<% end %>
+			</div>
 			</div>
 		</div>
     </div>

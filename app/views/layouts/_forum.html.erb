@@ -6,12 +6,14 @@
                     <th class="col-xs-3 col-sm-3 col-md-3 col-lg-3">Title</th>
                     <th class="col-xs-3 col-sm-3 col-md-3 col-lg-3">Ticket Number</th>
                     <th class="col-xs-3 col-sm-3 col-md-3 col-lg-3">Posted Date</th>
+                    <th class="col-xs-3 col-sm-3 col-md-3 col-lg-3">Viewed</th>
                 </thead>
                 <% @questions.each do |question| %>
                         <tr class="forum-question-row">
                                 <td class="forum-question-title"><%= question.title %></td>
                                 <td class="forum-question-ticket-id"><%= question.ticket_id %></td>
                                 <td class="forum-question-timestamp"><%= question.created_at.strftime("%F") %></td>
+                                <td class="forum-question-ticket-id"><%= question.view %></td>
                                 <td><%= link_to "View Answers", question, {class:"btn btn-primary"} %></td>
                         </tr>
                 <% end %>

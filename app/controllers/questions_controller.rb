@@ -9,11 +9,13 @@ class QuestionsController < ApplicationController
     
     def create
         @question = Question.new(question_param)
-        @question.ticket_id = @@Question_Counter
+        @question.ticket_id = (Question.all.size * 1821).to_s
         @question.view = 0
+
         (@question.save) ?
             (   
                 @@Question_Counter+=1
+                
                 respond_with(nil, location: confirmation_path(ticket: @question.ticket_id))
             ) 
             :
@@ -31,7 +33,17 @@ class QuestionsController < ApplicationController
         @answers = @question.answers.order(like: :DESC)
         
     end
-    
+    def search
+        @question = Question.where(ticket_id: params[:search]).first
+        (@question) ?
+            (
+                flash[:success] = "Successfully Liked the Answer."
+                redirect_to @question
+            ) :
+            
+            ( flash[:danger] = "Failed to retrieve the given quesiton.";
+                redirect_to root_path)
+    end
     def showticket
         @ticket = params[:ticket]
     end

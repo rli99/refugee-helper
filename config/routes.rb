@@ -22,10 +22,15 @@ Rails.application.routes.draw do
   resources :answers, only: [:create]
   
   get 'report' => 'answers#report'
+  get 'unreport' => 'answers#unreport'
   get 'like' => 'answers#like'
-
+  get 'unlike' => 'answers#unlike'
   get 'confirmation' => 'questions#showticket'
   get 'donate' => 'pages#donate'
   get 'answered' => 'pages#answered'
+
   get 'services' => 'pages#services'
+
+  get 'search' => 'questions#search'
+
 end

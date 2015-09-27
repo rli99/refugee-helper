@@ -16,46 +16,53 @@ class AnswersController < ApplicationController
    end
    def report
        @answer = Answer.find(params[:answer_id])
-       @answer.report += 1
-       (@answer.report >= 1 || ((self.like-self.report) < -5)) ?
-        (
-            @answer.destroy
-            redirect_to @answer.question) :
-        (
+
        @report = Report.new
        @report.answer = @answer
        @report.user = User.find(session[:user_id])
        
        (@answer.save && @report.save) ?
         (
-            flash[:success] = "Successfully Reported the Answer."
-            redirect_to @answer.question )
+            @answer.report += 1
+            (@answer.report >= 1 || ((self.like-self.report) < -5)) ?
+                ( @answer.destroy
+                    redirect_to @answer.question) :
+            (flash[:success] = "Successfully Reported the Answer."
+            redirect_to @answer.question ))
         :
         (
-            flash[:danger] = "An error occured. Could not report the Answer."
+            flash[:danger] = "You already liked that!"
             redirect_to @answer.question )
-        )
+        
+       
+   end
+   
+   def unreport
        
    end
    def like
        @answer = Answer.find(params[:answer_id])
-       @answer.like += 1
+       
        @like = Like.new
        @like.answer = @answer
-       binding.pry
        @like.user = User.find(session[:user_id])
-       
-       (@answer.save && @like.save) ?
+       (@like.save) ?
         (
+            
+            @answer.like += 1
+            @answer.save
             flash[:success] = "Successfully Liked the Answer."
             redirect_to @answer.question
             )
         :
         (
-            flash[:success] = "An error occured. Could not like the Answer."
+            flash[:danger] = "An error occured. Could not like the Answer."
             redirect_to @answer.question )
        
    end  
+   def unlike
+       
+   end
    private
     def answer_params
        params.require(:answer).permit(:content, :question_id) 
