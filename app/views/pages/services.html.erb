@@ -1,0 +1,29 @@
+<%= render 'layouts/title', title: "Interested in providing services to refugees?" %>
+<center><h2>Sign up below!</h2></center></br></br>
+
+<div class="row">
+  <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6 col-xs-offset-3 col-sm-offset-3 col-lg-offset-3 col-md-offset-3">
+    <form action="/" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="&#x2713;" /><input type="hidden" name="authenticity_token" value="xn/5wpAJgAjtl7F4VO4r6fXmXYhYKvPtlUZWfdBHNS7V0OxKe9x9UQnFEzEnpodrLS1M9HBmkGvdCJsgbSAC4Q==" />
+
+        <label>Company Name</label>
+        <input class="form-control" type="text" name="user[name]" id="user_name" />
+        </br>
+        <label>Services Category</label>
+         <select required="required" class="form-control" name="question[category]" id="question_category"><option value=""></option>
+<option value="Shelter">Shelter</option>
+<option value="Food">Food</option>
+<option value="Health">Health</option>
+<option value="Education">Education</option>
+<option value="Job">Job</option>
+<option value="Family">Family</option></select>
+        </br>
+        <label>Email</label>
+        <input class="form-control">
+        </br>
+        <label>Contact number</label>
+        <input class="form-control"/>
+        </br>
+        <input type="button" name="commit" value="Submit" class="btn btn-primary pull-right" />
+        
+</form>  </div>
+</div>
