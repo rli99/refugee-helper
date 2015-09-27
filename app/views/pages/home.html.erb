@@ -136,7 +136,7 @@
                 @questions[0..len].each do |question| %>
                     <tr class="forum-question-row">
                         <td class="forum-question-title"><%= question.title %></td>
-                        <% if question.content.length !== undefined %>
+                        <% if question.content !== undefined %>
                             <% cl = [question.content.length, 30].min %>
                         <% else %>
                             <% cl = 0 %>
