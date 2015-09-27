@@ -138,10 +138,10 @@
                         <td class="forum-question-title"><%= question.title %></td>
                         <% if question.content %>
                             <% cl = [question.content.length, 30].min %>
+                            <td class="forum-question-ticket-id"><%= question.content[0..cl] %>...</td>
                         <% else %>
-                            <% cl = 0 %>
+                            <td></td>
                         <% end %>
-                        <td class="forum-question-ticket-id"><%= question.content[0..cl] %>...</td>
                         <td class="forum-question-timestamp"><%= question.view %></td>
                         <td><%= link_to "View Answers", question, {class:"btn btn-primary"} %></td>
                     </tr>
